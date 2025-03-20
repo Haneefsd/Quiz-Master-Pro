@@ -1,0 +1,235 @@
+/* Reset and Base Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(184deg, #5014db, #1aa267);
+  background-image: url("https://img.freepik.com/free-photo/colorful-abstract-nebula-space-background_53876-111355.jpg?t=st=1742313845~exp=1742317445~hmac=0b1ccb185dca52992a941d33e61416fc15374ec951f1b705d02aa0c242fc5219&w=1380");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+#display-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5em;
+  width: 90%;
+  max-width: 40em;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.8em;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 1.5em;
+}
+
+.number-of-count {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.timer-div {
+  background-color: #e1f5fe;
+  padding: 0.5em 1.2em;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.5em;
+}
+
+.question {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.option-div {
+  width: 100%;
+  padding: 0.8em;
+  font-size: 1em;
+  text-align: left;
+  border: 2px solid #c0bfd2;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  margin: 0.4em 0;
+  transition: all 0.3s ease;
+}
+
+.option-div:hover {
+  background: #f1f1f1;
+  transform: scale(1.02);
+}
+
+.option-div:disabled {
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+#next-button {
+  font-size: 1em;
+  background-color: #8754ff;
+  color: #fff;
+  padding: 0.7em 1.8em;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 1.5em auto 0;
+  transition: all 0.3s ease;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#next-button:hover {
+  background-color: #6933ff;
+  transform: scale(1.05);
+}
+
+.score-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  text-align:right;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 25em;
+  display: none;
+}
+
+#user-score {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+/* Restart Button */
+#restart {
+  font-size: 1.2em;
+  background-color: #28a745;
+  color: #fff;
+  padding: 0.6em 1.5em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#restart:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.hide {
+  display: none;
+}
+
+.correct {
+  background-color: #e7f6d5;
+  color: #4caf50;
+  border-color: #4caf50;
+}
+
+.incorrect {
+  background-color: #ffdde0;
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+/* #leaderboard {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+  width: 80%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+} */
+
+#leaderboard {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 12px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#leaderboard h2 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+#leaderboard ul {
+  list-style: none;
+  padding: 0;
+}
+
+#leaderboard li {
+  font-size: 1.1em;
+  margin: 5px 0;
+  padding: 6px;
+  border-bottom: 1px solid #ccc;
+}
+
+#leaderboard li:nth-child(1) {
+  font-weight: bold;
+  color: gold;
+}
+
+#leaderboard li:nth-child(2) {
+  font-weight: bold;
+  color: silver;
+}
+
+#leaderboard li:nth-child(3) {
+  font-weight: bold;
+  color: #cd7f32; /* Bronze */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  #display-container {
+    padding: 1.8em;
+    width: 95%;
+  }
+  
+  .timer-div {
+    padding: 0.4em 1em;
+  }
+
+  .option-div {
+    font-size: 0.9em;
+  }
+
+  #next-button {
+    padding: 0.6em 1.5em;
+  }
+}
